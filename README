@@ -1,0 +1,7 @@
+CodeIgniter Azlibs is a collection of libraries that I created over time. Here is a list of the libraries:
+
+* **Azakis** : Akismet Library
+* **Azauth** : Authentication Library
+* **Azbraz** : Breadcrumbs Library
+* **Azcom**  : Threaded Comments Library
+* **Azlog**  : Logging Library
