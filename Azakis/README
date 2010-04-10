@@ -1,0 +1,68 @@
+CodeIgniter Akismet Library
+----------------------------
+
+This Library has an MIT license that you can find in the LICENSE file.
+
+Usage:
+------
+
+First you need to open the Azakis.php file, scroll down to the constructor (__construct)
+and add your API key, Home URL and add your application's name and version to the 
+beginning of the Application User Agent;
+
+The Home URL is the url of the blog or site you want to use the library on.
+The Application User Agent is a string that should have the following format:
+
+	Application Name/Version | Azakis/0.01
+
+You need to modify Application Name/Version to suit your site.
+
+Now you can start using the library.
+
+Load the library:
+
+	$this->load->library('azakis');
+
+You need to format your comment accordingly:
+
+	$comment['author_name']    = '';
+	$comment['author_website'] = '';
+	$comment['author_email']   = '';
+	$comment['body']           = '';
+	$comment['permalink']      = '';
+
+The permalink key is optional. Fill all the other ones with the info retrieved from the
+comment form. ie:
+
+	$comment['author_name']    = $this->input->post('name);
+	$comment['author_website'] = $this->input->post('author_website');
+	$comment['author_email']   = $this->input->post(''author_email);
+	$comment['body']           = $this->input->post('body');
+
+Now you can test if the comment is a spam by using the
+is_spam() method:
+
+	if ($this->azakis->is_spam($comment))
+	{
+		echo 'This comment is a spam!!';
+	}
+	else
+	{
+		echo 'This comment is interesting, definitely not a spam!';
+	}
+
+You can also set a comment as spam manually using the submit_spam() method:
+
+	if ($this->submit_spam($comment))
+	{
+		echo 'spam submitted successfully!';
+	}
+
+The same way, you can submit a ham in case Akismet did a mistake using the submit_ham() method:
+
+	if ($this->submit_ham($comment))
+	{
+		echo 'hpam submitted successfully!';
+	}
+
+That's all there is to it!

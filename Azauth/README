@@ -1,0 +1,19 @@
+This CodeIgniter authentication library was slightly inspired by the 
+QuickAuth library (http://github.com/syntaxmonster/Codeigniter-Authentication-Library)
+by David Blencowe (http://www.syntaxmonster.net).
+
+At first it was based on that library, but then I ended up completely rewritting it from
+scratch and created my own authentication library. I use the same license (MIT License),
+you can find it in the LICENSE file in the same folder.
+
+--------------------------------------------------------
+
+In order for the library to work normally, don't forget to set an encryption key
+in the config/config.php.
+
+Also you NEED to autoload the database library and setup the database configuration
+in config/database.php.
+
+The code is very simple and well documented so you shouldn't have any problems using
+the library right away. I'm going to right a seperate documentation as soon as I have
+some free time.
